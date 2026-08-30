@@ -2,10 +2,9 @@
     <div class="row mt-5">
         {{#if personas}}
         
-        <div class="col-md-3">
-            <table class="tex-center">
+            <table class="table text-center">
                 <thead>
-                    <tr clase="table-dark">
+                    <tr class="table-dark">
                         <th scope="col">Nombre</th>
                         <th scope="col">Apellido</th>
                         <th scope="col">Edad</th>
@@ -13,15 +12,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {{#each}}
+                    {{#each personas}}
                     <tr>
-                        <td>{{Nombre}}</td>
-                        <td>{{Apellido}}</td>
-                        <td>{{Edad}}</td>
+                        <td>{{nombre}}</td>
+                        <td>{{apellido}}</td>
+                        <td>{{edad}}</td>
                         <td>
                             <div>
                                 <a href="#" class="btn btn-warning">Editar</a>
-                                <a href="#" class="btn btn-success">Eliminar</a>
+                                <a href="#" class="btn btn-danger">Eliminar</a>
                             </div>
                             
                         </td>
@@ -50,7 +49,7 @@
                     <p class="card-text">Registrate Aqui.</p>
                     <a href="#" class="btn btn-primary">Registrarse</a>
                 </div>
-            </div>
+            
         {{/if}}
 
     </div>

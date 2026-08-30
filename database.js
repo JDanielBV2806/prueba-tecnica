@@ -1,6 +1,6 @@
-import {CreatePool} from 'mysql2/promise';
+import { createPool } from 'mysql2/promise';
 //recibe como parametro un objeto de js
-const pool = CreatePool({
+const pool = createPool({
     host: 'localhost',
     port: 3306,
     user: 'root',

@@ -36,7 +36,7 @@ app.use(express.json());
 
 //routes
 app.get ('/', (req, res)=> {
-    res.json({"message": 'Hola'});
+    res.render('index');
 });
 
 //Public files

@@ -38,4 +38,49 @@ router.get('/list', async (req, res) => {
         res.status(500).json({message: err.message});
     }
 });
+
+router.get('/edit/:id', async (req, res) => {
+    try{
+        const {id} = req.params;     //requerimientoi de parametros            
+        const [persona] = await pool.query('SELECT * FROM personas WHERE id = ?', [id]);
+        const personaEdit = persona[0]; 
+        res.render('personas/edit', {persona: persona[0]}); //objeto personaEdit para renderizar la vista edit.hbs
+
+    }
+    catch (err) {
+        console.error(err);
+        res.status(500).json({message: err.message});
+    }
+});
+ //ruta para editar los datos de una persona
+router.post('/edit/:id', async (req, res) => {
+    try{
+     
+        const {nombre, apellido, edad} = req.body;
+        const {id} = req.params;
+        const editPersona = {
+            nombre,
+            apellido,
+            edad
+        };
+        await pool.query('UPDATE personas SET ? WHERE id = ?', [editPersona, id]);//permite pasar un objeto con los datos a actualizar y el id de la persona a actualizar
+        res.redirect('/list');
+    }
+    catch (err) {
+        console.error(err);
+        res.status(500).json({message: err.message});
+    }
+});
+
+router.get('/delete/:id', async (req, res) => {
+    try{
+        const {id} = req.params;
+        await pool.query('DELETE FROM personas WHERE id = ?', [id]);
+        res.redirect('/list');
+    }
+    catch (err) {
+        console.error(err);
+        res.status(500).json({message: err.message});
+    }
+});
 export default router;

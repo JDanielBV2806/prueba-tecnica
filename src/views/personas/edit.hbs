@@ -1,0 +1,47 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3 class="text-uppercase">Editando un Producto</h3>
+                </div>
+                
+                <div class="card-body">
+                    <form action="/edit/{{persona.id}}" method="post">
+                        {{!Card para el Nombre}}
+                        <div class="input-group mt-2">
+                            <label for="nombre" class="input-group-text">Nombre</label>
+                            <input class="form-control" type="text" name="nombre" id="nombre" value="{{persona.nombre}}" placeholder="Ejemplo: Jhoan Daniel" autofocus
+                                required>
+
+                        </div>
+
+                         {{!Card para el Apellido}}
+                         <div class="input-group mt-2">
+                            <label for="apellido" class="input-group-text">Apellido</label>
+                            <input class="form-control" type="text" name="apellido" id="apellido" value="{{persona.apellido}}" placeholder="Ejemplo: Botero Vargas"
+                                required>
+
+                        </div>
+                            {{!Card para la Edad}}
+                         <div class="input-group mt-2">
+                            <label for="edad" class="input-group-text">Edad</label>
+                            <input class="form-control" type="number" name="edad" id="edad" value="{{persona.edad}}" placeholder="Ejemplo: 23"required>
+
+                        </div>
+                        {{!Clase dentro del formulario}}
+                        <div class="form-group mt-4 d-grid gap-2">
+                            <button class="btn btn-success">Actualizar</button>
+                        </div>
+                    </form>
+                </div>
+                
+
+
+               
+
+
+            </div>
+        </div>
+    </div>
+</div>

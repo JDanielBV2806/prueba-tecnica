@@ -1,0 +1,6 @@
+$kind: http-request
+name: http://localhost:3000/api/publico/productos
+description: ""
+url: http://localhost:3000/api/publico/productos
+method: GET
+order: 3669701976536658
